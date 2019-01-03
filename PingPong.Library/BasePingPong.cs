@@ -22,7 +22,6 @@ namespace PingPong.Library
 
         protected readonly AutoResetEvent AutoResetEvent = new AutoResetEvent(false);
 
-
         public virtual void Stop(object sender, ElapsedEventArgs e)
         {
             Console.WriteLine($"----------- Timer expired: stop the threads --------------");

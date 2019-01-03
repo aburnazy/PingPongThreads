@@ -9,8 +9,14 @@ namespace PingPong.Library
 
         protected override void PingPongWorker(Object o)
         {
-            base.PingPongWorker(o);
-            _finished.Signal();
+            try
+            {
+                base.PingPongWorker(o);
+            }
+            finally
+            {
+                _finished.Signal();
+            }
         }
 
         protected override void StartPingPong()
