@@ -42,8 +42,8 @@ namespace PingPongThreads
                 if (pingPong != null)
                 {
                     var timer = new System.Timers.Timer { Interval = 5000, AutoReset = false, Enabled = true };
-                    timer.Elapsed += (sender, e) => pingPong.Stop(sender, e);
-
+                    timer.Elapsed += (sender, e) => pingPong.Stop();
+                    
                     pingPong.Start();
                 }
             } while ( !"exit".Equals(commandStr, StringComparison.InvariantCultureIgnoreCase) );

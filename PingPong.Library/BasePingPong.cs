@@ -11,7 +11,7 @@ namespace PingPong.Library
 {
     public interface IPingPongRunner
     {
-        void Stop(object sender, ElapsedEventArgs e);
+        void Stop();
         void Start();
     }
 
@@ -22,9 +22,9 @@ namespace PingPong.Library
 
         protected readonly AutoResetEvent AutoResetEvent = new AutoResetEvent(false);
 
-        public virtual void Stop(object sender, ElapsedEventArgs e)
+        public void Stop()
         {
-            Console.WriteLine($"----------- Timer expired: stop the threads --------------");
+            Console.WriteLine($"----------- Timer expired: stopping the threads --------------");
             Volatile.Write(ref StopThreads, 1);
         }
 
